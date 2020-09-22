@@ -2,6 +2,10 @@ interface QuickTalkOptions {
     target: string | HTMLElement;
     uri: string;
     api_uri: string;
+    author?: {
+        first: string;
+        last: string;
+    };
     onload?: () => void;
 }
 
@@ -203,7 +207,7 @@ class QuickTalk {
             if (!re.test(String(email.value).toLowerCase()))
                 return this.info("Email is not correct");
             // send the post request
-            let data = {
+            let data: any = {
                 page: {
                     uri: this.options.uri,
                 },
@@ -214,6 +218,10 @@ class QuickTalk {
                     content: ta.value,
                 },
             };
+            if (this.options.author) {
+                data.author =
+                    this.options.author.first + "@" + this.options.author.last;
+            }
             this.request(this.options.api_uri + "/post", data, (ret) => {
                 if (ret.result) {
                     // TODO: more check goes here

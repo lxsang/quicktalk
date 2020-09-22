@@ -164,6 +164,10 @@ class QuickTalk {
                     content: ta.value,
                 },
             };
+            if (this.options.author) {
+                data.author =
+                    this.options.author.first + "@" + this.options.author.last;
+            }
             this.request(this.options.api_uri + "/post", data, (ret) => {
                 if (ret.result) {
                     // TODO: more check goes here
