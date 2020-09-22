@@ -2,6 +2,7 @@ interface QuickTalkOptions {
     target: string | HTMLElement;
     uri: string;
     api_uri: string;
+    onload?: () => void;
 }
 
 interface CommentEntry {
@@ -133,6 +134,26 @@ class QuickTalk {
         });
 
         let ta: HTMLTextAreaElement = document.createElement("textarea");
+        ta.onkeydown = (e) => {
+            if (e.keyCode === 9) {
+                // tab was pressed
+
+                // get caret position/selection
+                var val = ta.value,
+                    start = ta.selectionStart,
+                    end = ta.selectionEnd;
+
+                // set textarea value to: text before caret + tab + text after caret
+                ta.value =
+                    val.substring(0, start) + "    " + val.substring(end);
+
+                // put caret at right position again
+                ta.selectionStart = ta.selectionEnd = start + 4;
+
+                // prevent the focus lose
+                return false;
+            }
+        };
 
         let footer: HTMLDivElement = document.createElement("div");
         footer.setAttribute("class", "quick-talk-compose-footer");
@@ -240,6 +261,9 @@ class QuickTalk {
                     });
                 } else {
                     this.error(ret.error);
+                }
+                if (this.options.onload) {
+                    this.options.onload();
                 }
             }
         );
