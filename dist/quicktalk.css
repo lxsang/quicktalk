@@ -1,0 +1,122 @@
+.quick-talk-compose {
+    display: block;
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+}
+
+.quick-talk-compose input {
+    display: block;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    font-style: italic;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 13px;
+    color: #878887;
+}
+
+.quick-talk-compose textarea {
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    border: 0;
+    padding: 0;
+    outline: none;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #2c2c2c;
+}
+
+.quick-talk-compose .quick-talk-preview {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.quick-talk-compose .quick-talk-compose-footer {
+    display: flex;
+    flex-direction: row;
+}
+
+.quick-talk-compose .quick-talk-compose-footer div {
+    display: block;
+    flex: 1;
+    color: orangered;
+    font-style: italic;
+}
+
+.quick-talk-compose .quick-talk-compose-footer button,
+.quick-talk-compose-button {
+    color: white;
+    background-color: steelblue;
+    padding: 5px;
+    font-weight: bold;
+    border: 1px solid #e5e5e5;
+    outline: 0;
+    border-radius: 5px;
+    margin-left: 3px;
+}
+
+.quick-talk-compose-button {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.quick-talk-comment-thread {
+    display: block;
+}
+.quick-talk-comment-thread .quick-talk-comment {
+    margin-top: 10px;
+}
+
+.quick-talk-comment-thread .quick-talk-sub-comment {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.quick-talk-comment-thread .quick-talk-comment-header {
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    padding-top: 10px;
+    width: 100%;
+    flex-direction: row;
+}
+.quick-talk-comment-thread .quick-talk-comment-footer {
+    display: block;
+    margin: 0;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+.quick-talk-comment-thread .quick-talk-comment-footer span {
+    display: block;
+    color: steelblue;
+    cursor: pointer;
+    /* text-align: right; */
+    width: 100%;
+}
+.quick-talk-comment-thread .quick-talk-comment-footer span:hover {
+    text-decoration: underline;
+}
+.quick-talk-comment-thread .quick-talk-comment-user {
+    font-weight: bold;
+    color: steelblue;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 5px;
+    background-color: #e1ecf4;
+}
+
+.quick-talk-comment-thread .quick-talk-comment-time {
+    font-style: italic;
+    color: steelblue;
+    margin-left: 5px;
+    padding-top: 1px;
+    font-size: 13px;
+}
+.quick-talk-comment-thread .quick-talk-comment-content {
+    display: block;
+    margin-left: 20px;
+    color: #2c2c2c;
+}

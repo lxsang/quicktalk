@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="quicktalk.js"></script>
+        <link rel="stylesheet" href="quicktalk.css"></link>
+        <title>Lorem</title>
+        <script type="text/javascript">
+            window.onload = function () {
+                let options = {
+                    target: "quick_talk_thread",
+                    api_uri: "https://tk.localhost/comment",
+                    uri: "https://blog.localhost/post/id/35"
+                };
+                new QuickTalk(options);
+            };
+        </script>
+    </head>
+    <body>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+        </p>
+        <div id="quick_talk_thread"></div>
+    </body>
+</html>
