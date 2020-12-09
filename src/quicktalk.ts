@@ -6,6 +6,7 @@ interface QuickTalkOptions {
         first: string;
         last: string;
     };
+    page?: string | HTMLElement;
     onload?: () => void;
 }
 
@@ -29,6 +30,9 @@ class QuickTalk {
         this.options = opt;
         if (typeof this.options.target === "string") {
             this.options.target = document.getElementById(this.options.target);
+        }
+        if (typeof this.options.page && typeof this.options.page === "string") {
+            this.options.page = document.getElementById(this.options.page);
         }
         this.preview_on = false;
         this.instant_compose = undefined;
@@ -252,7 +256,9 @@ class QuickTalk {
         container.appendChild(footer);
 
         at.appendChild(container);
-        container.scrollIntoView();
+        if (this.options.page) {
+            (this.options.page as HTMLElement).scrollTop = container.offsetTop - (this.options.page as HTMLElement).offsetTop;
+        }
         return container;
     }
     private load_thread(at: HTMLElement): HTMLElement {

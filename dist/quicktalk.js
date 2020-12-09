@@ -4,6 +4,9 @@ class QuickTalk {
         if (typeof this.options.target === "string") {
             this.options.target = document.getElementById(this.options.target);
         }
+        if (typeof this.options.page && typeof this.options.page === "string") {
+            this.options.page = document.getElementById(this.options.page);
+        }
         this.preview_on = false;
         this.instant_compose = undefined;
         let editor = document.createElement("div");
@@ -196,7 +199,9 @@ class QuickTalk {
         container.appendChild(preview);
         container.appendChild(footer);
         at.appendChild(container);
-        container.scrollIntoView();
+        if (this.options.page) {
+            this.options.page.scrollTop = container.offsetTop - this.options.page.offsetTop;
+        }
         return container;
     }
     load_thread(at) {
